@@ -10,7 +10,7 @@ def main(page: ft.Page ):
     lista_produtos = ft.ListView()
     
     def adicionar(e):
-        lista_produtos.controls.append(ft.Text(f"Código: {codigo.value}, Quantidade: {quantidade.value}"))
+        lista_produtos.controls.append(ft.Text(f"Código: {codigo.value} | Quantidade: {quantidade.value}"))
         page.update()
 
     txt_codigo = ft.Text('Código do item:')
