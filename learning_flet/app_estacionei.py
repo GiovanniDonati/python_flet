@@ -7,39 +7,87 @@ def main(page: Page):
     FG = '#3450a1'
     PINK = '#eb06ff'
 
+    # page.window_maximized = True
+    page.window_height = 750
+    page.window_width = 450
+
     first_page_contents = Container(
         bgcolor='red',
         content=Column(
-             controls=[
+            controls=[
                 Row(
                     alignment='spaceBetween',
                     controls=[
                         Container(
                             bgcolor='white',
-                            content=Icon(
-                                icons.MENU)),
+                            content=Icon(icons.MENU)
+                        ),
                         Container(
-                            #Adicionar icone de perfil
-                            )
-                        ]
-                    )
-                ]
-            )
+                            # Adicionar ícone de perfil
+                        )
+                    ]
+                )
+            ]
         )
-
-    controlPanel = Container(
-
     )
+
+    card = Row(
+        controls=[
+            Container(
+                margin=margin.only(
+                    top=100, left=15
+                ),
+                width=120,
+                height=90,
+                bgcolor='white',
+                border_radius=15,
+            ),
+            Container(
+                margin=margin.only(
+                    top=100, left=0
+                    ),
+                width=120,
+                height=90,
+                bgcolor='white',
+                border_radius=15,
+            )
+        ]
+    )
+    controlPanel = Container(
+        Row(
+            controls=[
+                Container(
+                    margin=margin.only(
+                        top=100, left=15
+                    ),
+                    width=120,
+                    height=90,
+                    bgcolor='white',
+                    border_radius=15,
+                ),
+                Container(
+                    margin=margin.only(
+                        top=100, left=0
+                        ),
+                    width=120,
+                    height=90,
+                    bgcolor='white',
+                    border_radius=15,
+                )
+            ]
+        )
+    )
+
     menu = Row(
         controls=[
             Container(
                 width=280,
-                height=850,
+                height=650,
                 bgcolor=FG,
                 border_radius=35,
                 padding=padding.only(
-                    top=50,left=20,
-                    right=20,bottom=5
+                    top=50, left=20,
+                    right=20, bottom=5
                 ),
                 content=Column(
                     controls=[
@@ -50,10 +98,9 @@ def main(page: Page):
         ]
     )
 
-
     principal = Container(
-        width=400,
-        height=850,
+        width=350,
+        height=650,
         bgcolor=BG,
         border_radius=35,
         content=Stack(
@@ -63,6 +110,7 @@ def main(page: Page):
             ]
         )
     )
+
     page.add(principal)
 
 app(target=main)
