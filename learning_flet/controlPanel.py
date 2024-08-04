@@ -1,7 +1,11 @@
 import flet as ft
 
 def main(page: ft.Page ):
-    page.title = "Capacidade e Demanda"
+    page.title = "Controle de Estacionamento"
+    BG = ''
+    FWG = ''
+    FG = ''
+    PINK = ''
 
     lista_produtos = ft.ListView()
     
@@ -13,7 +17,7 @@ def main(page: ft.Page ):
     codigo = ft.TextField(label='Digite o código', text_align=ft.TextAlign.LEFT)
     txt_quantidade = ft.Text('Quantidade do item:')
     quantidade = ft.TextField(label='Digite a quantidade', text_align=ft.TextAlign.LEFT)
-    btn_produto = ft.ElevatedButton('Calcular', on_click=adicionar)
+    btn_produto = ft.ElevatedButton('Adicionar', on_click=adicionar)
 
 
     page.add(
