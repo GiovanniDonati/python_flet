@@ -1,23 +1,19 @@
 import flet as ft
 
 def main(page: ft.Page ):
-    page.title = "Controle de Estacionamento"
-    BG = ''
-    FWG = ''
-    FG = ''
-    PINK = ''
+    page.title = "Capacidade e Demanda"
 
     lista_produtos = ft.ListView()
     
     def adicionar(e):
-        lista_produtos.controls.append(ft.Text(f"Código: {codigo.value} | Quantidade: {quantidade.value}"))
+        lista_produtos.controls.append(ft.Text(f"Código: {codigo.value}, Quantidade: {quantidade.value}"))
         page.update()
 
     txt_codigo = ft.Text('Código do item:')
     codigo = ft.TextField(label='Digite o código', text_align=ft.TextAlign.LEFT)
     txt_quantidade = ft.Text('Quantidade do item:')
     quantidade = ft.TextField(label='Digite a quantidade', text_align=ft.TextAlign.LEFT)
-    btn_produto = ft.ElevatedButton('Adicionar', on_click=adicionar)
+    btn_produto = ft.ElevatedButton('Calcular', on_click=adicionar)
 
 
     page.add(
